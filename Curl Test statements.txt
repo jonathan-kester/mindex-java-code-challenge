@@ -1,0 +1,20 @@
+curl "http://localhost:8080/employee/16a596ae-edd3-4847-99fe-c4518e82c86f"
+
+curl "http://localhost:8080/employee/ReportingStructure/16a596ae-edd3-4847-99fe-c4518e82c86f"
+
+//valid
+curl "http://localhost:8080/employee/ReportingStructure/c0c2293d-16bd-4603-8e08-638a9d18b22c"
+
+//invalid
+curl "http://localhost:8080/employee/ReportingStructure/c0c2293d-16bd-4603-8e08-638a9d18b"
+
+curl -X POST -H "Content-Type: application/json" "http://localhost:8080/employee/" -d "{"""firstName""":"""Test"""}"
+
+//The next three use the employee ID from the created employee above
+curl -X POST -H "Content-Type: application/json" "http://localhost:8080/compensation/" -d "{"""employee""":{"""employeeId""":"""ae0e42e5-09dc-4986-9dd2-cea3c35476af"""},"""salary""":80000,"""effectiveDate""":null}"
+
+//valid
+curl "http://localhost:8080/compensation/16a596ae-edd3-4847-99fe-c4518e82c86f"
+
+//edit the ID to be invalid
+curl "http://localhost:8080/compensation/16a596ae-edd3-4847-99fe-c4518e82c"
