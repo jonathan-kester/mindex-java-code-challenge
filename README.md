@@ -25,6 +25,15 @@ The following endpoints are available to use:
     * URL: localhost:8080/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
+* CREATE
+    * HTTP Method: POST 
+    * URL: localhost:8080/compensation
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
+* READ
+    * HTTP Method: GET 
+    * URL: localhost:8080/compensation/{id}
+    * RESPONSE: Compensation
 ```
 The Employee has a JSON schema of:
 ```json
@@ -49,6 +58,42 @@ The Employee has a JSON schema of:
     "directReports": {
       "type": "array",
       "items" : "string"
+    }
+  }
+}
+```
+
+The Compensation has a JSON schema of:
+```json
+{
+  "type":"Compensation",
+  "properties": {
+    "employee": {
+      "employeeId": {
+          "type": "string"
+       },
+       "firstName": {
+          "type": "string"
+       },
+       "lastName": {
+          "type": "string"
+       },
+       "position": {
+          "type": "string"
+       },
+       "department": {
+          "type": "string"
+       },
+       "directReports": {
+          "type": "array",
+          "items" : "string"
+      }
+    },
+    "salary": {
+      "type": "integer"
+    },
+    "effectiveDate": {
+      "type": "string"
     }
   }
 }
