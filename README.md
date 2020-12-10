@@ -25,6 +25,11 @@ The following endpoints are available to use:
     * URL: localhost:8080/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
+* REPORT
+    * HTTP Method: GET 
+    * URL: localhost:8080/employee/ReportingStructure/{id}
+    * PAYLOAD: Employee
+    * RESPONSE: ReportingStructure
 * CREATE
     * HTTP Method: POST 
     * URL: localhost:8080/compensation
